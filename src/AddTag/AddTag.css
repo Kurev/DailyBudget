@@ -1,0 +1,58 @@
+.tags-emoji {
+  border-top: 1px solid grey;
+  cursor: pointer;
+  position: relative;
+  border-radius: 20px;
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tags-emoji h3{
+  margin-bottom: 20px;
+}
+
+.arrange-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: -140px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tag-arrange {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+
+.tag-arrange span {
+  font-size: 2rem;
+}
+
+.tag-arrange label {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.tag-arrange:hover{
+  background: rgb(34, 32, 32);
+  border-radius: 10px;
+  width: 20%;
+  transition: 0.2s;
+}
+
+.tag-arrange.selected label {
+  color: rgb(255, 255, 255);
+}

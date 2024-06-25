@@ -1,0 +1,78 @@
+ .border-confirm {
+    border-radius: 20px;
+    border-top: 1px solid grey;
+    margin-bottom: -180px;
+    padding: 30px;
+    color: white;
+    width: 500px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .animate-border {
+    transform: scale(1.05);
+  }
+  
+  .border-confirm p {
+    color: grey;
+    margin-top: 20px;
+  }
+  
+  .border-confirm .confirm {
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: -10px;
+  }
+  
+  .shield {
+    color: white;
+  }
+  
+  .emoji-tagName {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arrow{
+    font-size: 25px;
+    padding: 0px 20px;
+  }
+  
+  .emoji-tagName .tag-label {
+    font-size: 18px; /* Change this value to your desired font size */
+  }
+
+  .emoji-tagName .tag-emoji {
+    font-size: 40px; /* Change this value to your desired font size */
+  }
+  
+  .confirm-btn {
+    display: flex;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .confirm-btn button {
+    width: 300px;
+    height: 65px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .confirm-btn button:first-child {
+    background: rgb(195, 50, 50);
+  }
+  
+  .confirm-btn button:first-child:hover {
+    background: rgb(234, 66, 66);
+    transition: 0.2s;
+  }
+  

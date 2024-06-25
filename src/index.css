@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: rgb(23, 23, 37);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+h1{
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 70px;
+  color: rgb(121, 243, 99);;
+  font-weight: 300;
+}
+
+p{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,43 @@
+.today-container{
+    margin-top: -300px;
+    background: rgb(0, 0, 0);
+    color: white;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 180px;
+}
+
+.expenses{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.expenses .input-expenses{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.today{
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    padding-left: 5%;
+}
+
+.today p{
+    font-size: 18px;
+    margin-left: -25px;
+    color: rgb(96, 96, 96);
+}
+
+.amount p{
+    margin-left: 230px;
+    font-size: 25px;
+    color:  rgb(243, 99, 99);
+}
+
+.expenses .time{
+    color: grey;
+}

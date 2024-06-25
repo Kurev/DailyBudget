@@ -1,0 +1,99 @@
+  .hover-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    position: fixed; /* Change this to fixed */
+    top: 25%;
+    background-color: rgba(0, 0, 0, 0.9); /* Optional: Add background for better visibility */
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .background-black {
+    width: 500px;
+  }
+
+  .hover-container input {
+    background: none;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    width: 50%;
+  }
+
+  .hover-container .btn-hover {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .btn-hover button {
+    width: 90px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .hover-container p,
+  input {
+    margin-bottom: 40px;
+  }
+
+  .cancel {
+    background: rgb(195, 50, 50);
+  }
+
+  .cancel:hover {
+    background: rgb(234, 66, 66);
+    transition: 0.2s;
+  }
+
+  .tag {
+    border: 0;
+    outline: 0;
+    background: none;
+    color: grey;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .tag.selected {
+    color: white;
+  }
+
+  .tag-logo {
+    display: flex;
+    gap: 20px;
+    color: grey;
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  .tag-logo:hover {
+    animation: pulse 0.5s;
+  }
+
+  .tag-logo h1 {
+    color: grey;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .number-input::-webkit-inner-spin-button,
+  .number-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }

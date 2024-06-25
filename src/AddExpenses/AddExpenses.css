@@ -1,0 +1,83 @@
+.addExpe-container {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid grey;
+    background: black;
+    width: 500px;
+    height: 100px;
+    padding-left: 35px;
+    padding-right: 35px;
+    position: fixed; 
+    bottom: 0; 
+    z-index: 1000;
+}
+
+.fix-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon {
+    color: grey;
+    font-size: 30px;
+    transition: 0.2s;
+    width: 90px;
+}
+
+.icon:hover {
+    font-size: 35px;
+    margin-bottom: -5px;
+}
+
+.add-icon .icon {
+    font-size: 50px; /* Make the add icon larger */
+}
+
+.add-icon {
+    color: rgb(60, 167, 173);
+    margin-left: 16px;
+}
+
+.add-icon:hover {
+    color: rgba(55, 160, 189, 0.467);
+    transition: 0.2s;
+    margin-bottom: 0px;
+}
+
+.label {
+    color: grey; 
+    margin-top: 5px; 
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: inherit;
+}
+
+.info, .update {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 20px;  */
+}
+
+.info, .update .icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .info{
+    margin-left: -25px;
+} */
+
+.icon-button{
+    margin-left: 0;
+}
