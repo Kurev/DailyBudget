@@ -1,117 +1,36 @@
-import React from 'react'
-import './Today.css'
+import React from 'react';
+import './Today.css';
 
-const Today = () => {
+const Today = ({ confirmedDetails }) => {
   return (
     <div>
-        <div className="today-container">
-            <div className="today">
-                <p>Today</p>
-            </div>
-
-            <div className="expenses">
-              <div className="expe-cont">
-                <p className='input-expenses'>Utang sa Pinas</p>
-                <p className='time'>01: 07 PM</p>
-              </div>
-
-              <div className="amount">
-                <p>- 69690</p>
-              </div>
-            </div>
-            <div className="expenses">
-              <div className="expe-cont">
-                <p className='input-expenses'>Renta ila tagudin</p>
-                <p className='time'>01: 07 PM</p>
-              </div>
-
-              <div className="amount">
-                <p>- 980</p>
-              </div>
-            </div>
-            <div className="expenses">
-              <div className="expe-cont">
-                <p className='input-expenses'>Rent</p>
-                <p className='time'>01: 07 PM</p>
-              </div>
-
-              <div className="amount">
-                <p>- 980</p>
-              </div>
-            </div>
-            <div className="expenses">
-              <div className="expe-cont">
-                <p className='input-expenses'>Rent</p>
-                <p className='time'>01: 07 PM</p>
-              </div>
-
-              <div className="amount">
-                <p>- 980</p>
-              </div>
-            </div>
-            <div className="expenses">
-              <div className="expe-cont">
-                <p className='input-expenses'>Rent</p>
-                <p className='time'>01: 07 PM</p>
-              </div>
-
-              <div className="amount">
-                <p>- 980</p>
-              </div>
-            </div>
-            <div className="expenses">
-              <div className="expe-cont">
-                <p className='input-expenses'>Rent</p>
-                <p className='time'>01: 07 PM</p>
-              </div>
-
-              <div className="amount">
-                <p>- 980</p>
-              </div>
-            </div>
-            <div className="expenses">
-              <div className="expe-cont">
-                <p className='input-expenses'>Rent</p>
-                <p className='time'>01: 07 PM</p>
-              </div>
-
-              <div className="amount">
-                <p>- 980</p>
-              </div>
-            </div>
-            <div className="expenses">
-              <div className="expe-cont">
-                <p className='input-expenses'>Rent</p>
-                <p className='time'>01: 07 PM</p>
-              </div>
-
-              <div className="amount">
-                <p>- 980</p>
-              </div>
-            </div>
-            <div className="expenses">
-              <div className="expe-cont">
-                <p className='input-expenses'>Rent</p>
-                <p className='time'>01: 07 PM</p>
-              </div>
-
-              <div className="amount">
-                <p>- 980</p>
-              </div>
-            </div>
-            <div className="expenses">
-              <div className="expe-cont">
-                <p className='input-expenses'>Rent</p>
-                <p className='time'>01: 07 PM</p>
-              </div>
-
-              <div className="amount">
-                <p>- 980</p>
-              </div>
-            </div>
+      <div className="today-container">
+        <div className="today">
+          <p>Today</p>
         </div>
+        {confirmedDetails.length === 0 ? (
+          <div className="no-expenses">No expenses recorded</div>
+        ) : (
+          confirmedDetails.slice().reverse().map((detail, index) => (
+            <div className="expenses" key={index}>
+              <div className="expe-cont">
+                <p className='input-expenses'> 
+                  <span className='center'>
+                    <span className='input-emoji'>{detail.tag?.emoji}</span> 
+                    <span className='input-tag'>{detail.tag?.label}</span>
+                  </span>
+                </p>
+                <p className='time'>{detail.time}</p>
+              </div>
+              <div className="amount">
+                <p>- {detail.amount}</p>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Today
+export default Today;

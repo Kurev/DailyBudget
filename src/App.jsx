@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import 'animate.css/animate.min.css'; // Import animate.css
 import './App.css';
 import BudgetApp from './BudgetApp/BudgetApp';
 import Today from './Today/Today';
@@ -6,7 +7,6 @@ import AddExpenses from './AddExpenses/AddExpenses';
 import AddAnimation from './AddAnimation/AddAnimation';
 import AddTag from './AddTag/AddTag';
 import Confirm from './Confirm/Confirm';
-import 'animate.css/animate.min.css';
 
 function App() {
   const [isAddAnimationVisible, setIsAddAnimationVisible] = useState(false);
@@ -17,6 +17,7 @@ function App() {
   const [selectedTag, setSelectedTag] = useState(null);
   const [amount, setAmount] = useState('');
   const [isConfirmVisible, setIsConfirmVisible] = useState(false);
+  const [confirmedDetails, setConfirmedDetails] = useState([]);
   const addTagRef = useRef(null);
 
   const handleAddIconClick = () => {
@@ -34,10 +35,19 @@ function App() {
   };
 
   const handleCancelClick = () => {
-    setAnimationClass('animate__bounceOutDown');
-    setTimeout(() => {
-      setIsAddAnimationVisible(false);
-    }, 700); // Match the duration of the bounceOutDown animation
+    if (isConfirmVisible) {
+      setConfirmAnimationClass('animate__bounceOutDown');
+      setTimeout(() => {
+        setIsConfirmVisible(false);
+        setIsAddAnimationVisible(true);
+        setAnimationClass('animate__bounceInUp');
+      }, 700); // Match the duration of the bounceOutDown animation
+    } else {
+      setAnimationClass('animate__bounceOutDown');
+      setTimeout(() => {
+        setIsAddAnimationVisible(false);
+      }, 700); // Match the duration of the bounceOutDown animation
+    }
   };
 
   const handleTagButtonClick = () => {
@@ -74,12 +84,17 @@ function App() {
     }
   };
 
-  const handleConfirmCancelClick = () => {
+  const handleConfirm = () => {
+    const currentTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    const newEntry = {
+      amount: parseFloat(amount),
+      tag: selectedTag,
+      time: currentTime,
+    };
+    setConfirmedDetails([...confirmedDetails, newEntry]);
     setConfirmAnimationClass('animate__bounceOutDown');
     setTimeout(() => {
       setIsConfirmVisible(false);
-      setIsAddAnimationVisible(true);
-      setAnimationClass('animate__bounceInUp');
     }, 700); // Match the duration of the bounceOutDown animation
   };
 
@@ -94,16 +109,18 @@ function App() {
     };
   }, [isAddTagVisible]);
 
+  // Calculate total amount spent
+  const totalAmountSpent = confirmedDetails.reduce((total, detail) => total + detail.amount, 0);
+
   return (
     <div className="main-container">
       {!isAddAnimationVisible && !isAddTagVisible && !isConfirmVisible && (
         <>
-          <BudgetApp />
-          <Today />
+          <BudgetApp totalAmountSpent={totalAmountSpent} />
+          <Today confirmedDetails={confirmedDetails} />
         </>
       )}
       <AddExpenses onAddIconClick={handleAddIconClick} />
-      
       {isAddAnimationVisible && (
         <AddAnimation
           className={`animate__animated ${animationClass}`}
@@ -125,8 +142,8 @@ function App() {
           <Confirm
             amount={amount}
             selectedTag={selectedTag}
-            className={confirmAnimationClass}
-            onCancelClick={handleConfirmCancelClick}
+            onConfirm={handleConfirm}
+            onCancelClick={handleCancelClick} // Ensure the onCancelClick is passed
           />
         </div>
       )}

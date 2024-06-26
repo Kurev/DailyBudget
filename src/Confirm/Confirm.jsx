@@ -3,7 +3,7 @@ import './Confirm.css';
 import { TbShieldLockFilled } from "react-icons/tb";
 import { HiArrowNarrowRight } from "react-icons/hi";
 
-const Confirm = ({ amount, selectedTag, className, onCancelClick }) => {
+const Confirm = ({ amount, selectedTag, className, onConfirm, onCancelClick }) => {
   return (
     <div>
       <div className={`border-confirm ${className}`}>
@@ -14,7 +14,7 @@ const Confirm = ({ amount, selectedTag, className, onCancelClick }) => {
         </div>
         <div className='confirm-btn'>
           <button onClick={onCancelClick}>Cancel</button>
-          <button>Confirm</button>
+          <button onClick={onConfirm}>Confirm</button>
         </div>
       </div>
     </div>
