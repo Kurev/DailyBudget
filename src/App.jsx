@@ -20,6 +20,58 @@ function App() {
   const [confirmedDetails, setConfirmedDetails] = useState([]);
   const addTagRef = useRef(null);
 
+  // Load data from localStorage when the component mounts
+  useEffect(() => {
+    const storedDetails = localStorage.getItem('confirmedDetails');
+    const storedTag = localStorage.getItem('selectedTag');
+    const storedAmount = localStorage.getItem('amount');
+
+    if (storedDetails) {
+      setConfirmedDetails(JSON.parse(storedDetails));
+      console.log('Loaded confirmedDetails:', JSON.parse(storedDetails));
+    } else {
+      console.log('No confirmedDetails found in localStorage');
+    }
+
+    if (storedTag) {
+      setSelectedTag(JSON.parse(storedTag));
+      console.log('Loaded selectedTag:', JSON.parse(storedTag));
+    } else {
+      console.log('No selectedTag found in localStorage');
+    }
+
+    if (storedAmount) {
+      setAmount(storedAmount);
+      console.log('Loaded amount:', storedAmount);
+    } else {
+      console.log('No amount found in localStorage');
+    }
+  }, []);
+
+  // Save confirmed details to localStorage whenever it changes
+  useEffect(() => {
+    if (confirmedDetails.length > 0) {
+      console.log('Saving confirmedDetails:', confirmedDetails);
+      localStorage.setItem('confirmedDetails', JSON.stringify(confirmedDetails));
+    }
+  }, [confirmedDetails]);
+
+  // Save selected tag to localStorage whenever it changes
+  useEffect(() => {
+    if (selectedTag !== null) {
+      console.log('Saving selectedTag:', selectedTag);
+      localStorage.setItem('selectedTag', JSON.stringify(selectedTag));
+    }
+  }, [selectedTag]);
+
+  // Save amount to localStorage whenever it changes
+  useEffect(() => {
+    if (amount !== '') {
+      console.log('Saving amount:', amount);
+      localStorage.setItem('amount', amount);
+    }
+  }, [amount]);
+
   const handleAddIconClick = () => {
     if (isConfirmVisible) {
       setConfirmAnimationClass('animate__bounceOutDown');
@@ -96,7 +148,12 @@ function App() {
     setTimeout(() => {
       setIsConfirmVisible(false);
     }, 700); // Match the duration of the bounceOutDown animation
+
+    // Clear inputs after confirming
+    setAmount('');
+    setSelectedTag(null);
   };
+  
 
   useEffect(() => {
     if (isAddTagVisible) {
@@ -143,7 +200,7 @@ function App() {
             amount={amount}
             selectedTag={selectedTag}
             onConfirm={handleConfirm}
-            onCancelClick={handleCancelClick} // Ensure the onCancelClick is passed
+            onCancelClick={handleCancelClick}
           />
         </div>
       )}

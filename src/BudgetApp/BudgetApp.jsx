@@ -12,7 +12,7 @@ const BudgetApp = ({ totalAmountSpent }) => {
           <h1>Daily Budget</h1>
         </div>
         <div className='budget'>
-          <p>Spend this day</p>
+          <p>All Spent</p>
           <div className="peso">
             <h2 className='currency'>₱</h2>
             <h2 className='number'>{whole}</h2>

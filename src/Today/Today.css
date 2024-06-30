@@ -46,6 +46,11 @@
     margin-left: 55px;
     margin-bottom: 5px;
   }
+
+  .time{
+    display: flex;
+    flex-direction: column;
+  }
   
   
   .input-emoji {

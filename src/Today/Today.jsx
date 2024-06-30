@@ -1,12 +1,18 @@
 import React from 'react';
+import { format } from 'date-fns';
 import './Today.css';
 
 const Today = ({ confirmedDetails }) => {
+  const today = new Date();
+
+  // Format the date to "Month Day, Year"
+  const formattedDate = format(today, 'MMMM d, yyyy');
+
   return (
     <div>
       <div className="today-container">
         <div className="today">
-          <p>Today</p>
+          <p>{formattedDate}</p>
         </div>
         {confirmedDetails.length === 0 ? (
           <div className="no-expenses">No expenses recorded</div>
@@ -18,6 +24,7 @@ const Today = ({ confirmedDetails }) => {
                   <span className='center'>
                     <span className='input-emoji'>{detail.tag?.emoji}</span> 
                     <span className='input-tag'>{detail.tag?.label}</span>
+                    
                   </span>
                 </p>
                 <p className='time'>{detail.time}</p>
