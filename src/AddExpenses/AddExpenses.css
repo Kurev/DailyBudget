@@ -95,3 +95,20 @@
         height: 100px;
     }
 }
+
+@media screen and (max-width: 380px){
+    .add-icon .icon {
+        font-size: 40px; /* Make the add icon larger */
+        margin-left: 10px;
+    }
+
+    .icon {
+        font-size: 25px;
+        transition: 0.2s;
+        width: 90px;
+    }
+    
+    .icon:hover {
+        font-size: 30px;
+    }
+}
