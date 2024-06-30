@@ -70,4 +70,40 @@
     margin-top: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+
+  @media screen and (max-width: 650px){
+    .amount p {
+      margin-left: 310px;
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (max-width: 550px){
+    .amount p {
+      margin-left: 200px;
+      margin-top: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 450px){
+    .amount p {
+      margin-left: 160px;
+      margin-top: 10px;
+      padding: 0 -20px;
+    }
+  }
+
+  @media screen and (max-width: 431px){
+    .amount p {
+      margin-left: 150px;
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (max-width: 390px){
+    .amount p {
+      margin-left: 110px;
+      margin-top: 10px;
+    }
+  }
   

@@ -6,7 +6,7 @@ const BudgetApp = ({ totalAmountSpent }) => {
   const [whole, decimal] = formattedAmount.split('.');
 
   return (
-    <div>
+    <div className='cont'>
       <div className="budget-container">
         <div className='logo'>
           <h1>Daily Budget</h1>
