@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 500px;
+    width: 500px;
     position: fixed; /* Change this to fixed */
     top: 25%;
     background-color: rgba(0, 0, 0, 0.9); /* Optional: Add background for better visibility */
@@ -96,4 +96,9 @@
   .number-input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+
+  @media screen and (max-width) {
+    
   }
