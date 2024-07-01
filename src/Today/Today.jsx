@@ -3,10 +3,26 @@ import { format } from 'date-fns';
 import './Today.css';
 
 const Today = ({ confirmedDetails }) => {
+  
   const today = new Date();
-
   // Format the date to "Month Day, Year"
   const formattedDate = format(today, 'MMMM d, yyyy');
+
+  const sortExpenses = (expenses) => {
+    let sorted = {}
+    // console.log(expenses)
+    expenses.forEach((expense) => {
+      // console.log(expense)
+      if (sorted[expense.dateCreated] == undefined) {
+        sorted[expense.dateCreated] = []
+      }
+      sorted[expense.dateCreated].push(expense)
+    })
+    return sorted
+  }
+
+  console.log("sorted data")
+  console.log(sortExpenses(confirmedDetails))
 
   return (
     <div>
@@ -27,7 +43,9 @@ const Today = ({ confirmedDetails }) => {
                     
                   </span>
                 </p>
-                <p className='time'>{detail.time}</p>
+                <p className='time'>{detail.timeCreated}</p>
+                
+                <p> {detail.dateCreated}</p>
               </div>
               <div className="amount">
                 <p>- {detail.amount}</p>

@@ -7,6 +7,8 @@ import AddExpenses from './AddExpenses/AddExpenses';
 import AddAnimation from './AddAnimation/AddAnimation';
 import AddTag from './AddTag/AddTag';
 import Confirm from './Confirm/Confirm';
+import { format } from 'date-fns';
+
 
 function App() {
   const [isAddAnimationVisible, setIsAddAnimationVisible] = useState(false);
@@ -137,11 +139,14 @@ function App() {
   };
 
   const handleConfirm = () => {
+    const today = new Date();
     const currentTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+    const currentDate = format(today, 'MMMM d, yyyy')
     const newEntry = {
       amount: parseFloat(amount),
       tag: selectedTag,
-      time: currentTime,
+      timeCreated: currentTime, 
+      dateCreated: currentDate
     };
     setConfirmedDetails([...confirmedDetails, newEntry]);
     setConfirmAnimationClass('animate__bounceOutDown');

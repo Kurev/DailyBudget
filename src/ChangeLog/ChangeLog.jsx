@@ -17,6 +17,7 @@ const ChangeLog = () => {
 
         <div className="details">
             <p className='update'>Update</p>
+            
             <p className='info-changeLog'><li>I am planning to upgrade this web application by adding features like dark mode and robust date management, ensuring all data is stored accurately by specific dates. Although my current skill level in implementing these features isn't very advanced, but I am dedicated to improving my abilities in this field to successfully integrate all the desired functionalities into my application</li></p>
 
             
