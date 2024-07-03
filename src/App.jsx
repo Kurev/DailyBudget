@@ -177,6 +177,8 @@ function App() {
     setSelectedTag(null);
   };
 
+  console.log('Why are you here go back to your land alien')
+
   useEffect(() => {
     if (isAddTagVisible) {
       document.addEventListener('mousedown', handleClickOutside);
