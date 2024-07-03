@@ -3,6 +3,9 @@ import './AddAnimation.css';
 import { FaPenClip } from "react-icons/fa6";
 
 const AddAnimation = ({ onCancelClick, className, onTagButtonClick, selectedTag, amount, onAmountChange, onNextClick }) => {
+
+  
+
   return (
     <div className="background-black">
       <div className={`hover-container ${className}`}>

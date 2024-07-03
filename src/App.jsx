@@ -120,6 +120,24 @@ function App() {
   };
 
   const handleNextClick = () => {
+    if (!amount || parseFloat(amount) <= 0) {
+      alert('Input your amount!');
+      return;
+    }
+
+    if (!selectedTag) {
+      alert('Input your tag!');
+      return;
+    }
+
+    if (selectedTag.label === 'Savings') {
+      alert('Nice saving money is good 😊');
+    } else if (parseFloat(amount) >= 100 && parseFloat(amount) <= 500) {
+      alert('Are you rich or something 🙀');
+    } else if (parseFloat(amount) >= 500 && parseFloat(amount) <= 1000) {
+      alert('Why are you spending so much money 😡');
+    }
+
     setIsAddAnimationVisible(false);
     setConfirmAnimationClass('animate__bounceInUp');
     setIsConfirmVisible(true);
@@ -141,7 +159,7 @@ function App() {
   const handleConfirm = () => {
     const today = new Date();
     const currentTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-    const currentDate = format(today, 'MMMM d, yyyy')
+    const currentDate = format(today, 'MMMM d, yyyy');
     const newEntry = {
       amount: parseFloat(amount),
       tag: selectedTag,
@@ -158,7 +176,6 @@ function App() {
     setAmount('');
     setSelectedTag(null);
   };
-  
 
   useEffect(() => {
     if (isAddTagVisible) {

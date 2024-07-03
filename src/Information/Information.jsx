@@ -38,11 +38,10 @@ const Information = () => {
             </div>
           <ul>
             <li>VS Code</li>
-            <li>Html, Css, and Js</li>
+            <li>Html</li>
+            <li>Css</li>
+            <li>Js</li>
             <li>React</li>
-            <li>ChatGPT</li>
-            <li>StackOverFlow</li>
-            <li>Youtube</li>
             <li>Animate.css</li>
           </ul>
         </div>
