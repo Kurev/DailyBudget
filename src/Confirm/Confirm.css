@@ -75,4 +75,33 @@
     background: rgb(234, 66, 66);
     transition: 0.2s;
   }
+
+  @media screen and (max-width: 507px) {
+    .border-confirm {
+      width: 410px;
+    }
+  }
+
+
+  @media screen and (max-width: 403px) {
+    .border-confirm {
+      width: 375px;
+    }
+
+    
+  }
+
+
+  @media screen and (max-width: 376px) {
+    .confirm-btn button {
+      height: 55px;
+      margin-bottom: 130px;
+    }
+  }
+
+  @media screen and (max-width: 355px) {
+    .border-confirm {
+      width: 300px;
+    }
+  }
   
