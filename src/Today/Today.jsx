@@ -4,9 +4,6 @@ import './Today.css';
 
 const Today = ({ confirmedDetails }) => {
   
-  const today = new Date();
-  // Format the date to "Month Day, Year"
-  const formattedDate = format(today, 'MMMM d, yyyy');
 
   const sortExpenses = (expenses) => {
     let sorted = {}
@@ -28,7 +25,7 @@ const Today = ({ confirmedDetails }) => {
     <div>
       <div className="today-container">
         <div className="today">
-          <p>{formattedDate}</p>
+          <p>Your Expenses</p>
         </div>
         {confirmedDetails.length === 0 ? (
           <div className="no-expenses">No expenses recorded</div>
@@ -45,7 +42,9 @@ const Today = ({ confirmedDetails }) => {
                 </p>
                 <p className='time'>{detail.timeCreated}</p>
                 
-                <p> {detail.dateCreated}</p>
+                <div className="date">
+                  <p> {detail.dateCreated}</p>
+                </div>
               </div>
               <div className="amount">
                 <p>- {detail.amount}</p>

@@ -27,7 +27,7 @@
   }
   
   .main-container {
-    width: 500px;
+    max-width: 500px;
     min-height: 100vh;
     background: black;
     display: flex;
@@ -38,6 +38,10 @@
   
   .popUpAnimation {
     animation: bounceInUp 2s;
+  }
+
+  @media screen and (max-width: 374px) {
+    
   }
   
  

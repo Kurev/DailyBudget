@@ -4,16 +4,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    max-width: 500px;
     position: fixed; /* Change this to fixed */
     top: 25%;
-    background-color: rgba(0, 0, 0, 0.9); /* Optional: Add background for better visibility */
     padding: 20px;
     border-radius: 10px;
   }
 
   .background-black {
-    width: 500px;
+    max-width: 500px;
   }
 
   .hover-container input {
@@ -99,6 +98,74 @@
   }
 
 
-  @media screen and (max-width) {
-    
+  @media screen and (min-width: 1200px) {
+    .hover-container {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      position: fixed; /* Change this to fixed */
+      top: 25%;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  
+    .background-black {
+      width: 500px;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .hover-container {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      position: fixed; /* Change this to fixed */
+      top: 25%;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  
+    .background-black {
+      width: 500px;
+    }
+  }
+
+  @media screen and (max-width: 431px) {
+    .hover-container {
+      max-width: 500px;
+      margin-left: -180px;
+    }
+  
+    .background-black {
+      max-width: 500px;
+    }
+  }
+
+  @media screen and (max-width: 415px) {
+    .hover-container {
+      max-width: 500px;
+      margin-left: -180px;
+    }
+  
+    .background-black {
+      max-width: 500px;
+    }
+  }
+
+
+  @media screen and (max-width: 376px) {
+    .hover-container {
+      max-width: 500px;
+      margin-left: -180px;
+    }
+  
+    .background-black {
+      max-width: 500px;
+    }
   }
