@@ -171,10 +171,6 @@ function App() {
     setTimeout(() => {
       setIsConfirmVisible(false);
     }, 700); // Match the duration of the bounceOutDown animation
-
-    // Clear inputs after confirming
-    setAmount('');
-    setSelectedTag(null);
   };
 
   console.log('Why are you here go back to your land alien')
