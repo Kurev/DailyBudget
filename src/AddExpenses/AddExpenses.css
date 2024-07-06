@@ -56,8 +56,8 @@
     color: grey; 
     margin-top: 5px; 
     font-size: 14px;
-    font-family: sans-serif;
-    font-weight: inherit;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
 }
 
 .info, .update {

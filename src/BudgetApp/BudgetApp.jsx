@@ -1,6 +1,7 @@
 import React from 'react';
 import './BudgetApp.css';
 
+
 const BudgetApp = ({ totalAmountSpent }) => {
   const formattedAmount = totalAmountSpent.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const [whole, decimal] = formattedAmount.split('.');
@@ -9,7 +10,7 @@ const BudgetApp = ({ totalAmountSpent }) => {
     <div className='cont'>
       <div className="budget-container">
         <div className='logo'>
-          <h1>Daily Budget</h1>
+          <h1>Daily Budie</h1>
         </div>
         <div className='budget'>
           <p>All Spent</p>

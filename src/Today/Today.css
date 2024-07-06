@@ -18,6 +18,7 @@
     justify-content: space-between;
     width: 100%;
     margin-top: 30px;
+    margin-bottom: -10px;
   }
   
   .expenses .input-expenses {
@@ -37,6 +38,7 @@
   .today p{
     margin-top: -30px;
     margin-bottom: 45px;
+    font-family: "Work Sans", sans-serif;
   }
   
   .amount p {
@@ -44,6 +46,11 @@
     font-size: 20px;
     color: rgb(243, 99, 99);
     margin-top: 10px;
+    font-family: "Work Sans", sans-serif;
+  }
+
+  .date p{
+    font-family: "Work Sans", sans-serif;
   }
   
   .expenses .time {
@@ -55,6 +62,7 @@
   .time{
     display: flex;
     flex-direction: column;
+    font-family: "Work Sans", sans-serif;
   }
   
   
@@ -66,6 +74,8 @@
   
   .input-tag {
     margin-left: 55px;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 200;
   }
   
   .no-expenses {
@@ -73,7 +83,6 @@
     color: grey;
     font-size: 16px;
     margin-top: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   @media screen and (max-width: 650px){
