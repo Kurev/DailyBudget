@@ -24,6 +24,14 @@ const ChangeLog = () => {
           <p className='fixed'>Fixed</p>
 
           <div className="date">
+              <p>July 7 2024</p>
+            </div>
+          <ul>
+            <li>Change The Font</li>
+            <li>Fixing The Bug</li>
+          </ul>
+
+          <div className="date">
               <p>July 3 2024</p>
             </div>
           <ul>
